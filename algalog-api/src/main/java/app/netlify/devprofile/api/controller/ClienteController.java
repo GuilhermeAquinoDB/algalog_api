@@ -18,7 +18,7 @@ public class ClienteController {
 		cliente1.setId(1L);
 		cliente1.setNome("João");
 		cliente1.setTelefone("34 99999-1111");
-		cliente1.setEmail("joaãodascolves@gmail.com");
+		cliente1.setEmail("joaaodascolves@gmail.com");
 		
 		var cliente2 = new Cliente();
 		cliente2.setId(2L);
