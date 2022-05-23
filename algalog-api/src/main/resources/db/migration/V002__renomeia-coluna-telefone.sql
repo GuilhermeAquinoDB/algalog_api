@@ -1,1 +1,1 @@
-ALTER TABLE cliente RENAME COLUMN telefone TO fone;
+ALTER TABLE cliente RENAME COLUMN fone TO telefone;

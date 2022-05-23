@@ -37,21 +37,13 @@ public class ClienteController {
 	@GetMapping("/{clienteId}")
 	public ResponseEntity<Cliente> buscar(@PathVariable Long clienteId) {
 		return clienteRepository.findById(clienteId)
-//				.map(cliente -> ResponseEntity.ok(cliente))
 				.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
 
-//		Optional<Cliente> cliente = clienteRepository.findById(clienteId);
-//
-//		if (cliente.isPresent()) {
-//			return ResponseEntity.ok(cliente.get());
-//		}
-//		return ResponseEntity.notFound().build();
 	}
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Cliente adicionar(@Valid @RequestBody Cliente cliente) {
-//		return clienteRepository.save(cliente);
 		return catalogoClienteService.salvar(cliente);
 	}
 
@@ -62,7 +54,6 @@ public class ClienteController {
 		}
 
 		cliente.setId(clienteId);
-//		cliente = clienteRepository.save(cliente);
 		cliente = catalogoClienteService.salvar(cliente);
 
 		return ResponseEntity.ok(cliente);
@@ -73,7 +64,6 @@ public class ClienteController {
 		if (!clienteRepository.existsById(clienteId)) {
 			return ResponseEntity.notFound().build();
 		}
-//		clienteRepository.deleteById(clienteId);
 		catalogoClienteService.excluir(clienteId);
 
 		return ResponseEntity.noContent().build();

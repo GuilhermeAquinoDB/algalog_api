@@ -35,7 +35,7 @@ public class Cliente {
 
 	@NotBlank
 	@Size(max = 20)
-	@Column(name = "fone")
+	@Column(name = "telefone")
 	private String telefone;
 
 }
